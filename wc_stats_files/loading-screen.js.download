@@ -1,0 +1,56 @@
+﻿//plugin huynq ngay 28/9/16 dung de show loading trong luc cho
+(function ($)
+{
+    var methods = {
+        init: function (options) {
+            this.css({
+                "position": "absolute",
+                "width": "100%",
+                "height": "100%",
+                "background-color": "rgba(255, 255, 255, 0.8)",
+                "background-image": "url('../../Content/loading-plugin/img/loading.gif')",
+                "background-repeat": "no-repeat",
+                "background-position": "center 100px",
+                "z-index": "1000000"
+            });
+
+            this.fadeIn({
+                duration: 300,
+                fail: function () {
+                    $(this).show();
+                }
+            });
+            //this.show();
+            
+        },
+        show: function() {
+            this.fadeIn({
+                duration: 300,
+                fail: function () {
+                    $(this).show();
+                }
+            });
+            //this.show();
+        },
+        hide: function() {
+            this.fadeOut({
+                duration: 300,
+                fail: function () {
+                    $(this).hide();
+                }
+            });
+        }
+    };
+
+    $.fn.vscloading = function (methodOrOptions) {
+        if (methods[methodOrOptions]) {
+            return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof methodOrOptions === 'object' || !methodOrOptions) {
+            // Default to "init"
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + methodOrOptions + ' does not exist on jQuery.vscloading');
+        }
+    };
+})(jQuery)
+;
