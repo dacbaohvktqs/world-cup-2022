@@ -182,7 +182,7 @@
                     $.each(response_data, function (i, item) {
                         schedulers.push(item.scheduler_id);
                         scheduler_names.push(item.a_team + ' - '+ item.b_team);
-                        $('#scheduler-' + (i+1)).text(item.a_team + ' - '+ item.b_team)
+                        $('#scheduler-' + (i+1)).html((item.a_team + ' - '+ item.b_team) + '<br/>(' + item.a_final_result + "-" + item.b_final_result + ')');
                         $.each(item.guess_data, function (i, item1) {
                             point_array = data_map[item1.tele_id];
                             if (!point_array){
