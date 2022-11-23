@@ -194,7 +194,7 @@
                             guess_map = data_map[item1.tele_id].guess_map;
 
                             point_map[item.scheduler_id] = item1.final_point;
-                            guess_map[item.scheduler_id] = (item1.a_guess_result == -1 || item1.b_guess_result == -1) ? "-" : (item1.a_guess_result + "-" + item1.b_guess_result);
+                            guess_map[item.scheduler_id] = (item1.description == "-1" ) ? "-" : (item1.a_guess_result + "-" + item1.b_guess_result);
 
                             point_array.push(item1.final_point);
                             total+= item1.final_point;
