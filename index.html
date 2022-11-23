@@ -1,199 +1,463 @@
 <!DOCTYPE html>
-<!-- saved from url=(0021)http://14.225.122.36/ -->
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SI Sôi động cùng World Cup 2022</title>
-    <!-- Global stylesheets -->
-    <link href="./wc_stats_files/css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/styles.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/core.min.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/components.min.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/colors.min.css" rel="stylesheet" type="text/css">
-    <!-- /global stylesheets -->
-    <!-- Core JS files -->
-    <script type="text/javascript" async="" src="./wc_stats_files/ga.js.download"></script>
-    <script src="./wc_stats_files/pace.min.js.download"></script>
-    <script src="./wc_stats_files/jquery.min.js.download"></script>
-    <script src="./wc_stats_files/bootstrap.min.js.download"></script>
-    <script src="./wc_stats_files/blockui.min.js.download"></script>
-    <script src="./wc_stats_files/nicescroll.min.js.download"></script>
-    <script src="./wc_stats_files/drilldown.js.download"></script>
-    <!-- /core JS files -->
-    <!-- Theme JS files -->
-    <script src="./wc_stats_files/datatables.min.js.download"></script>
-    <script src="./wc_stats_files/select2.min.js.download"></script>
-    <script type="text/javascript" src="./wc_stats_files/loading-screen.js.download"></script>
-    <script src="./wc_stats_files/app.js.download"></script>
-    <script src="./wc_stats_files/datatables_basic.js.download"></script>
-    <!-- /theme JS files -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" /> -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title></title>
+    <script src="https://telegram.org/js/telegram-web-app.js?5"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <style>
+	.choices{position:relative;margin-bottom:24px;font-size:16px}.choices:focus{outline:0}.choices:last-child{margin-bottom:0}.choices.is-disabled .choices__inner,.choices.is-disabled .choices__input{background-color:#eaeaea;cursor:not-allowed;-webkit-user-select:none;-ms-user-select:none;user-select:none}.choices.is-disabled .choices__item{cursor:not-allowed}.choices [hidden]{display:none!important}.choices[data-type*=select-one]{cursor:pointer}.choices[data-type*=select-one] .choices__inner{padding-bottom:7.5px}.choices[data-type*=select-one] .choices__input{display:block;width:100%;padding:10px;border-bottom:1px solid #ddd;background-color:#fff;margin:0}.choices[data-type*=select-one] .choices__button{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==);padding:0;background-size:8px;position:absolute;top:50%;right:0;margin-top:-10px;margin-right:25px;height:20px;width:20px;border-radius:10em;opacity:.5}.choices[data-type*=select-one] .choices__button:focus,.choices[data-type*=select-one] .choices__button:hover{opacity:1}.choices[data-type*=select-one] .choices__button:focus{box-shadow:0 0 0 2px #00bcd4}.choices[data-type*=select-one] .choices__item[data-value=''] .choices__button{display:none}.choices[data-type*=select-one]:after{content:'';height:0;width:0;border-style:solid;border-color:#333 transparent transparent;border-width:5px;position:absolute;right:11.5px;top:50%;margin-top:-2.5px;pointer-events:none}.choices[data-type*=select-one].is-open:after{border-color:transparent transparent #333;margin-top:-7.5px}.choices[data-type*=select-one][dir=rtl]:after{left:11.5px;right:auto}.choices[data-type*=select-one][dir=rtl] .choices__button{right:auto;left:0;margin-left:25px;margin-right:0}.choices[data-type*=select-multiple] .choices__inner,.choices[data-type*=text] .choices__inner{cursor:text}.choices[data-type*=select-multiple] .choices__button,.choices[data-type*=text] .choices__button{position:relative;display:inline-block;margin:0 -4px 0 8px;padding-left:16px;border-left:1px solid #008fa1;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==);background-size:8px;width:8px;line-height:1;opacity:.75;border-radius:0}.choices[data-type*=select-multiple] .choices__button:focus,.choices[data-type*=select-multiple] .choices__button:hover,.choices[data-type*=text] .choices__button:focus,.choices[data-type*=text] .choices__button:hover{opacity:1}.choices__inner{display:inline-block;vertical-align:top;width:100%;background-color:#f9f9f9;padding:7.5px 7.5px 3.75px;border:1px solid #ddd;border-radius:2.5px;font-size:14px;min-height:44px;overflow:hidden}.is-focused .choices__inner,.is-open .choices__inner{border-color:#b7b7b7}.is-open .choices__inner{border-radius:2.5px 2.5px 0 0}.is-flipped1.is-open .choices__inner{border-radius:0 0 2.5px 2.5px}.choices__list{margin:0;padding-left:0;list-style:none}.choices__list--single{display:inline-block;padding:4px 16px 4px 4px;width:100%}[dir=rtl] .choices__list--single{padding-right:4px;padding-left:16px}.choices__list--single .choices__item{width:100%}.choices__list--multiple{display:inline}.choices__list--multiple .choices__item{display:inline-block;vertical-align:middle;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:500;margin-right:3.75px;margin-bottom:3.75px;background-color:#00bcd4;border:1px solid #00a5bb;color:#fff;word-break:break-all;box-sizing:border-box}.choices__list--multiple .choices__item[data-deletable]{padding-right:5px}[dir=rtl] .choices__list--multiple .choices__item{margin-right:0;margin-left:3.75px}.choices__list--multiple .choices__item.is-highlighted{background-color:#00a5bb;border:1px solid #008fa1}.is-disabled .choices__list--multiple .choices__item{background-color:#aaa;border:1px solid #919191}.choices__list--dropdown{visibility:hidden;z-index:1;position:absolute;width:100%;background-color:#fff;border:1px solid #ddd;top:100%;margin-top:-1px;border-bottom-left-radius:2.5px;border-bottom-right-radius:2.5px;overflow:hidden;word-break:break-all;will-change:visibility}.choices__list--dropdown.is-active{visibility:visible}.is-open .choices__list--dropdown{border-color:#b7b7b7}.is-flipped1 .choices__list--dropdown{top:auto;bottom:100%;margin-top:0;margin-bottom:-1px;border-radius:.25rem .25rem 0 0}.choices__list--dropdown .choices__list{position:relative;max-height:300px;overflow:auto;-webkit-overflow-scrolling:touch;will-change:scroll-position}.choices__list--dropdown .choices__item{position:relative;padding:10px;font-size:14px}[dir=rtl] .choices__list--dropdown .choices__item{text-align:right}@media (min-width:640px){.choices__list--dropdown .choices__item--selectable{padding-right:100px}.choices__list--dropdown .choices__item--selectable:after{content:attr(data-select-text);font-size:12px;opacity:0;position:absolute;right:10px;top:50%;transform:translateY(-50%)}[dir=rtl] .choices__list--dropdown .choices__item--selectable{text-align:right;padding-left:100px;padding-right:10px}[dir=rtl] .choices__list--dropdown .choices__item--selectable:after{right:auto;left:10px}}.choices__list--dropdown .choices__item--selectable.is-highlighted{background-color:#f2f2f2}.choices__list--dropdown .choices__item--selectable.is-highlighted:after{opacity:.5}.choices__item{cursor:default}.choices__item--selectable{cursor:pointer}.choices__item--disabled{cursor:not-allowed;-webkit-user-select:none;-ms-user-select:none;user-select:none;opacity:.5}.choices__heading{font-weight:600;font-size:12px;padding:10px;border-bottom:1px solid #f7f7f7;color:gray}.choices__button{text-indent:-9999px;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:transparent;background-repeat:no-repeat;background-position:center;cursor:pointer}.choices__button:focus,.choices__input:focus{outline:0}.choices__input{display:inline-block;vertical-align:baseline;background-color:#f9f9f9;font-size:14px;margin-bottom:5px;border:0;border-radius:0;max-width:100%;padding:4px 0 4px 2px}[dir=rtl] .choices__input{padding-right:2px;padding-left:0}.choices__placeholder{opacity:.5}
+              body {
+                  font-family: sans-serif;
+                  background-color: var(--tg-theme-bg-color, #ffffff);
+                  color: var(--tg-theme-text-color, #222222);
+                  font-size: 16px;
+                  margin: 0;
+                  padding: 0;
+                  color-scheme: var(--tg-color-scheme);
+              }
+
+              a {
+                  color: var(--tg-theme-link-color, #2678b6);
+              }
+
+              button {
+                  display: block;
+                  width: 100%;
+                  font-size: 14px;
+                  margin: 15px 0;
+                  padding: 12px 20px;
+                  border: none;
+                  border-radius: 4px;
+                  background-color: var(--tg-theme-button-color, #50a8eb);
+                  color: var(--tg-theme-button-text-color, #ffffff);
+                  cursor: pointer;
+              }
+
+                  button[disabled] {
+                      opacity: 0.6;
+                      cursor: auto;
+                      pointer-events: none;
+                  }
+
+                  button.close_btn {
+                      /*position: fixed;*/
+                      position: absolute;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      border-radius: 0;
+                      margin: 0;
+                      padding: 16px 20px;
+                      text-transform: uppercase;
+                  }
+
+              section {
+                  padding: 15px 15px 65px;
+                  //text-align: center;
+              }
+
+              p {
+                  margin: 40px 0 15px;
+              }
+
+              ul {
+                  text-align: left;
+              }
+
+              li {
+                  color: var(--tg-theme-hint-color, #a8a8a8);
+              }
+
+              textarea {
+                  width: 100%;
+                  box-sizing: border-box;
+                  padding: 7px;
+              }
+
+              pre {
+                  background: rgba(0, 0, 0, .07);
+                  border-radius: 4px;
+                  padding: 4px;
+                  margin: 7px 0;
+                  word-break: break-all;
+                  word-break: break-word;
+                  white-space: pre-wrap;
+                  text-align: left;
+              }
+
+              .dark pre {
+                  background: rgba(255, 255, 255, .15);
+              }
+
+              .hint {
+                  font-size: .8em;
+                  color: var(--tg-theme-hint-color, #a8a8a8);
+              }
+
+              .ok {
+                  color: green;
+              }
+
+              .err {
+                  color: red;
+              }
+
+              #fixed_wrap {
+                  position: fixed;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  transform: translateY(100vh);
+              }
+
+              .viewport_border,
+              .viewport_stable_border {
+                  position: fixed;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  height: var(--tg-viewport-height, 100vh);
+                  pointer-events: none;
+              }
+
+              .viewport_stable_border {
+                  height: var(--tg-viewport-stable-height, 100vh);
+              }
+
+                  .viewport_border:before,
+                  .viewport_stable_border:before {
+                      content: attr(text);
+                      display: inline-block;
+                      position: absolute;
+                      background: gray;
+                      right: 0;
+                      top: 0;
+                      font-size: 7px;
+                      padding: 2px 4px;
+                      vertical-align: top;
+                  }
+
+                  .viewport_stable_border:before {
+                      background: green;
+                      left: 0;
+                      right: auto;
+                  }
+
+                  .viewport_border:after,
+                  .viewport_stable_border:after {
+                      content: '';
+                      display: block;
+                      position: absolute;
+                      left: 0;
+                      right: 0;
+                      top: 0;
+                      bottom: 0;
+                      border: 2px dashed gray;
+                  }
+
+                  .viewport_stable_border:after {
+                      border-color: green;
+                  }
+
+              small {
+                  font-size: 12px;
+              }
+
+              .col {
+                  padding: 5px;
+                  margin: 0px;
+              }
+              .choices__list--dropdown .choices__item--selectable {
+                  padding-right: 1rem;
+              }
+
+              .choices__list--single {
+                  padding: 0;
+              }
+
+              .choices[data-type*=select-one]:after {
+                  right: 1.5rem;
+              }
+
+              .shadow {
+                  box-shadow: 0.3rem 0.3rem 1rem rgba(178, 200, 244, 0.23);
+              }
+
+              a {
+                  text-decoration: none;
+                  color: inherit;
+                  transition: all 0.3s;
+              }
+    </style>
 </head>
 
-<body class="pace-done" data-new-gr-c-s-check-loaded="14.1087.0" data-gr-ext-installed="">
-    <div class="pace  pace-inactive">
-        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-            <div class="pace-progress-inner"></div>
-        </div>
-        <div class="pace-activity"></div>
-    </div>
-    <div class="loading-screen" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.8); background-image: url(&quot;../../Content/loading-plugin/img/loading.gif&quot;); background-repeat: no-repeat; background-position: center 100px; z-index: 1000000; display: none;"></div>
-    <!-- Main navbar -->
-    <div class="navbar navbar-inverse">
-        <div class="navbar-header"> <a class="navbar-brand" href="http://14.225.122.36/">SI SÔI ĐỘNG CÙNG WORLD CUP 2022</a> </div>
-        <div class="navbar-collapse collapse" id="navbar-mobile">
-            <p id="status_on" style="display: none" class="navbar-text"><span class="label bg-success-400">Online</span></p>
-            <p id="status_off" class="navbar-text"></p>
-        </div>
-    </div>
-    <!-- /main navbar -->
-    <!-- Second navbar -->
-    <div class="navbar navbar-default" id="navbar-second">
-        <div class="page-header">
-            <div class="page-header-content">
-                <div class="page-title">
-                    <h4>BẢNG XẾP HẠNG CÁC TAY ĐUA WORLD CUP 2022</h4>
+<body>
+    <section>
+        <form>
+            <div class="card" id="frmRegister">
+                <h5 class="card-header bg-primary text-white">Đăng ký thông tin</h5>
+                <div class="card-body">
+                    <label class="form-control border-0 p-0 m-0"><b>Vui lòng chọn Họ và tên</b></label>
+                    <select id="cboUsers" class="selectpicker form-control"></select>
+                </div>
+                <br />
+                <div class="col-md-12"><button type="button" class="btn btn-primary" onclick="register()">Đăng ký</button></div>
+            </div>
+            <br />
+            <div class="card" id="frmGuess">
+                <h5 class="card-header bg-primary text-white">Dự đoán kết quả các trận</h5>
+                <div class="card-body text-black">
+                    <div id="goalInfo"></div>
+                    <hr />
+                    <button type="button" id="btn-guess" class="btn btn-primary" onclick="submit_result()">Gửi dự đoán</button>
+                    <div id="lblNotice" class="alert alert-success" role="alert">
+                        Dự đoán thành công! Chúc bạn luôn may mắn!
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /page header -->
-        <!-- Page container -->
-        <div class="page-container" style="min-height:887.24609375px">
-            <!-- Page content -->
-            <div class="page-content">
-                <!-- Main content -->
-                <div class="content-wrapper table-responsive">
-                    <!-- Scrollable datatable -->
-                    <table class="table table-striped table-sm">
-                      <thead class="thead-dark bg-success text-center">
-                        <tr>
-                            <th scope="col" colspan="3">Họ và tên</th>
-                            <th scope="col" class="text-center">Trận 1 </th>
-                            <th scope="col" class="text-center">Trận 2 </th>
-                            <th scope="col" class="text-center">Trận 3 </th>
-                            <th scope="col" class="text-center">Trận 4 </th>
-                            <th scope="col" class="text-center">Trận 5 </th>
-                            <th scope="col" class="text-center">Trận 6 </th>
-                            <th scope="col" class="text-center">Trận 7 </th>
-                            <th scope="col" class="text-center">Trận 8 </th>
-                            <th scope="col" class="text-center">Trận 9 </th>
-                            <th scope="col" class="text-center">Trận 10</th>
-                            <th scope="col" class="text-center">Trận 11</th>
-                            <th scope="col" class="text-center">Trận 12</th>
-                            <th scope="col" class="text-center">Trận 13</th>
-                            <th scope="col" class="text-center">Trận 14</th>
-                            <th scope="col" class="text-center">Trận 15</th>
-                            <th scope="col" class="text-center">Trận 16</th>
-                            <th scope="col" class="text-center">Trận 17</th>
-                            <th scope="col" class="text-center">Trận 18</th>
-                            <th scope="col" class="text-center">Trận 19</th>
-                            <th scope="col" class="text-center">Trận 20</th>
-                            <th scope="col" class="text-center">Trận 21</th>
-                            <th scope="col" class="text-center">Trận 22</th>
-                            <th scope="col" class="text-center">Trận 23</th>
-                            <th scope="col" class="text-center">Trận 24</th>
-                            <th scope="col" class="text-center">Trận 25</th>
-                            <th scope="col" class="text-center">Trận 26</th>
-                            <th scope="col" class="text-center">Trận 27</th>
-                            <th scope="col" class="text-center">Trận 28</th>
-                            <th scope="col" class="text-center">Trận 29</th>
-                            <th scope="col" class="text-center">Trận 30</th>
-                            <th scope="col" class="text-center">Trận 31</th>
-                            <th scope="col" class="text-center">Trận 32</th>
-                            <th scope="col" class="text-center">Trận 33</th>
-                            <th scope="col" class="text-center">Trận 34</th>
-                            <th scope="col" class="text-center">Trận 35</th>
-                            <th scope="col" class="text-center">Trận 36</th>
-                            <th scope="col" class="text-center">Trận 37</th>
-                            <th scope="col" class="text-center">Trận 38</th>
-                            <th scope="col" class="text-center">Trận 39</th>
-                            <th scope="col" class="text-center">Trận 40</th>
-                            <th scope="col" class="text-center">Trận 41</th>
-                            <th scope="col" class="text-center">Trận 42</th>
-                            <th scope="col" class="text-center">Trận 43</th>
-                            <th scope="col" class="text-center">Trận 44</th>
-                            <th scope="col" class="text-center">Trận 45</th>
-                            <th scope="col" class="text-center">Trận 46</th>
-                            <th scope="col" class="text-center">Trận 47</th>
-                            <th scope="col" class="text-center">Trận 48</th>
-                            <th scope="col" class="text-center">Trận 49</th>
-                            <th scope="col" class="text-center">Trận 50</th>
-                            <th scope="col" class="text-center">Trận 51</th>
-                            <th scope="col" class="text-center">Trận 52</th>
-                            <th scope="col" class="text-center">Trận 53</th>
-                            <th scope="col" class="text-center">Trận 54</th>
-                            <th scope="col" class="text-center">Trận 55</th>
-                            <th scope="col" class="text-center">Trận 56</th>
-                            <th scope="col" class="text-center">Trận 57</th>
-                            <th scope="col" class="text-center">Trận 58</th>
-                            <th scope="col" class="text-center">Trận 59</th>
-                            <th scope="col" class="text-center">Trận 60</th>
-                            <th scope="col" class="text-center">Trận 61</th>
-                            <th scope="col" class="text-center">Trận 62</th>
-                            <th scope="col" class="text-center">Trận 63</th>
-                            <th scope="col" class="text-center">Trận 64</th>
-                        </tr>
-                      </thead>
-                      <tbody id="wc-data">
-                      </tbody>
-                    </table>
-                    <!-- /scrollable datatable -->
-                </div>
-                <!-- /main content -->
-            </div>
-            <!-- /page content -->
-        </div>
-        <!-- /page container -->
-        <script type="text/javascript">
-            var get_data_endpoint = "https://mocki.io/v1/687d914e-d9af-425f-9f3b-2f591f1fe9ac";
-            var response_data;
-            $( document ).ready(function() {
-                $.ajax({
-                  type: 'GET',
-                  async: false,
-                  url: get_data_endpoint,
-                  data: "",
-                  success: function(output) {response_data = output}
-                });
+        </form>
+    </section>
 
-                if (response_data){
-                    var content = "";
-                    var data_map = {};
-                    var point_array = [];
-                    $.each(response_data, function (i, item) {
-                        
-                        $.each(item.guess_data, function (i, item1) {
-                            point_array = data_map[item1.tele_id];
-                            if (!point_array){
-                                data_map[item1.tele_id] = {"name": item1.name, "points": []};
+    <script type="application/javascript">
+
+        var tele_id = "17";
+        var data = {};
+        var get_data_endpoint = "https://gw-bioid.vnpt.vn/wc/1.0/WorldCup/GetData_Guess";
+        var dev = true;
+
+        $("#lblNotice").hide();
+        Telegram.WebApp.ready();
+        const initData = Telegram.WebApp.initData || '';
+        const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
+
+
+        $( document ).ready(function() {
+            $.ajax({
+              type: 'GET',
+              async: false,
+              url: get_data_endpoint + "?tele_id=" + (dev ? tele_id: `${initDataUnsafe.user.id}`),
+              data: "",
+              success: function(output) {data = output}
+            });
+
+            $("#cboUsers").change();
+            load_data(dev ? tele_id: `${initDataUnsafe.user.id}`)
+
+            $(".goal-result").change(function(){
+                var reg = new RegExp('^[0-9]$');
+                if(!reg.test($(this).val())){
+                    alert('Kết quả dự đoán phải là số, có giá trị từ 0 và nhỏ hơn 9');
+                    $(this).val(0);
+                    $(this).focus();
+                }
+            });
+
+            $("#cboUsers").change(function(){
+                $("#frmInfo").show();
+            });
+
+        });
+
+        function toggleMainButton(el) {
+            const mainButton = Telegram.WebApp.MainButton;
+            if (mainButton.isVisible) {
+                mainButton.hide();
+                el.innerHTML = 'Show Main Button';
+            } else {
+                mainButton.show();
+                el.innerHTML = 'Hide Main Button';
+            }
+        }
+
+        function register() {
+            if (data.schedulers.length > 0){
+                $("#frmGuess").show();
+                $("#frmRegister").hide();
+
+                return;
+            }
+
+            if (data.schedulers.length == 0){
+                var post_data = {"tele_id": dev ? tele_id: `${initDataUnsafe.user.id}`, "emp_id":  $("#cboUsers").val(), "results": []};;
+                var response = register_or_push_data(post_data);
+                if (response.code == 0){
+                    $("#frmGuess").show();
+                    $("#frmRegister").hide();
+                }else{
+                    $("#lblNotice").text("Đăng ký tài khoản không thành công. " + response.message || "");
+                    $("#lblNotice").removeClass("alert-success");
+                    $("#lblNotice").addClass("alert-danger");
+                    $("#lblNotice").show();
+                    $("#lblNotice").focus();
+                }
+            }
+        }
+
+        // Submit Guess or Register User
+        function register_or_push_data(data){
+            var response = {};
+                $.ajax({
+                    type: "POST",
+                    url: post_data_endpoint,
+                    async: false,
+                    content: "application/json; charset=utf-8",
+                    data: { input: JSON.stringify(data) },
+                    success: function (data) {
+                        console.log(data);
+                        response = data;
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                    }
+                });
+            return response;
+        }
+
+        // Load main data
+        function load_data(id) {
+            if (data == null || data == undefined){
+                alert('Không thể lấy thông tin lịch thi đấu, vui lòng thử lại sau!')
+                return;
+            }
+
+            if (data.is_registered == 1){
+                $("#frmRegister").hide();
+                $("#frmGuess").show();
+            }else if (data.is_registered == 0){
+                $("#frmGuess").hide();
+                // Add Employees
+                if (data.employees){
+                    $('#cboUsers').find('option').remove().end();
+                    var options = [];
+                    $.each(data.employees, function (i, item) {
+                        $('#cboUsers').append($('<option>', {
+                            value: item.id,
+                            text : item.name
+                        }));
+                    });
+                    const sorting = document.querySelector('.selectpicker');
+                    const commentSorting = document.querySelector('.selectpicker');
+                    const sortingchoices = new Choices(sorting, {
+                        placeholder: false,
+                        itemSelectText: ''
+                    });
+                    // Trick to apply your custom classes to generated dropdown menu
+                    let sortingClass = sorting.getAttribute('class');
+                    window.onload= function () {
+                        sorting.parentElement.setAttribute('class', sortingClass);
+                    }
+
+                }
+
+                $("#frmRegister").show();
+            }else {
+                alert('Không thể lấy thông tin trận đấu, vui lòng thử lại sau!')
+                return;
+            }
+
+            if (data.schedulers.length == 0){
+                $("#goalInfo").show();
+                $("#goalInfo").html('<div id="lblEmpty" class="alert alert-warning" role="alert">WorldCup hôm nay tạm nghỉ! Vui lòng quay lại sau!</div>');
+                $("#btn-guess").hide();
+                return;
+            }
+
+            // Ktra xem da du doan hay chua
+            if (data.is_guess == 1){
+                // da du doan
+                var content = '';
+                $.each(data.schedulers, function (i, item) {
+                       content += '<label class="form-control border-0 p-0 m-0"><b>Trận ' + (item.id + 1) + ' đá lúc ' + item.time + ' ngày '+ item.date +'</b></label><hr class="p-0 m-0"><div class="col-md-12"><div class="row"><div class="col card-header bold text-white bg-danger"><b>Đội tuyển</b></div><div class="col card-header bold text-white bg-danger"><b>Tỉ số dự đoán</b></div></div><br><div class="row"><div class="col"><label class="form-control border-0">Đội tuyển <b>' + item.a_team +'</b></label></div><div class="col"><input type="number" id="a_result_'+ item.id +'" placeholder="Nhập tỷ số" value='+ item.a_team_result +' min="0" max="10"  disabled  class="form-control goal-result"></div><div class="w-100"></div><div class="col"><label class="form-control border-0">Đội tuyển <b>' + item.b_team +'</b></label></div><div class="col"><input type="number" id="b_result_'+ item.id +'" placeholder="Nhập tỷ số" value='+ item.b_team_result +' min="0" max="10" disabled class="form-control goal-result"></div></div>';
+                       if (item.turn == "BANG" || item.turn == "1/16"){
+                            content+= '<div class="col ml-3 use-star d-none"><div class="check-box"><input class="form-check-input" type="checkbox" value="" id="use-star-' + item.id + '"><label class="form-check-label" for="flexCheckChecked">Sử dụng ngôi sao hi vọng</label></div></div></div>';
+                        }else{
+                            if (item.use_star == 1){
+                                content+= '<div class="col ml-3 use-star"><div class="check-box"><input class="form-check-input" type="checkbox" value="" id="use-star-' + item.id + '" checked><label class="form-check-label" for="flexCheckChecked">Sử dụng ngôi sao hi vọng</label></div></div></div>';
+                             }else{
+                                content+= '<div class="col ml-3 use-star"><div class="check-box"><input class="form-check-input" type="checkbox" value="" id="use-star-' + item.id + '"><label class="form-check-label" for="flexCheckChecked">Sử dụng ngôi sao hi vọng</label></div></div></div>';
                             }
 
-                            point_array = data_map[item1.tele_id].points;
-                            point_array.push(item1.final_point);
-                            var person_data = {"name": item1.name, "points": point_array};
-                            data_map[item1.tele_id] = person_data;
-                        });
-                    });
-                    $.each(data_map, function (i, item) {
-                        content += '<tr><th scope="row" colspan="3">'+ item.name +'</th>';
-                         for(var i=0; i<64; i++){
-                            content += '<td class="text-center">'+(item.points[i] ? (item.points[i] > 0 ? '+' + item.points[i] : item.points[i]) : '-')+'</td>';
-                         }
-                         content +='</tr>';
-                    });
-                    console.log(content);
-                    $("#wc-data").html(content);
-                }
-        });
-        </script>
-        <!-- Footer -->
-        <div class="footer text-muted"> © 2022. VNPTIT - SI </div>
-        <!-- /footer -->
-    </div>
-</body>
-<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+                        }
+                       if((i+1)<data.schedulers.length){
+                            content+='<hr/>';
+                       }
+                });
+                $("#goalInfo").html(content);
+                $("#lblNotice").text("Bạn đã dự đoán kết quả các trận đấu! Chúc bạn luôn may mắn!");
+                $("#lblNotice").show();
+                $("#btn-guess").hide();
+            }else if (data.is_guess == 0){
+                // chua du doan
+                var content = '';
+                $.each(data.schedulers, function (i, item) {
+                       content += '<label class="form-control border-0 p-0 m-0"><b>Trận ' + (item.id + 1) + ' đá lúc ' + item.time + ' ngày '+ item.date +'</b></label><hr class="p-0 m-0"><div class="col-md-12"><div class="row"><div class="col card-header bold text-white bg-danger"><b>Đội tuyển</b></div><div class="col card-header bold text-white bg-danger"><b>Tỉ số dự đoán</b></div></div><br><div class="row"><div class="col"><label class="form-control border-0">Đội tuyển <b>' + item.a_team +'</b></label></div><div class="col"><input type="number" id="a_result_'+ item.id +'" placeholder="Nhập tỷ số" value="0" min="0" max="10" class="form-control goal-result"></div><div class="w-100"></div><div class="col"><label class="form-control border-0">Đội tuyển <b>' + item.b_team +'</b></label></div><div class="col"><input type="number" id="b_result_'+ item.id +'" placeholder="Nhập tỷ số" value="0" min="0" max="10" class="form-control  goal-result"></div></div>';
+                        if (item.turn == "BANG" || item.turn == "1/16"){
+                            content+= '<div class="col ml-3 use-star d-none"><div class="check-box"><input class="form-check-input" type="checkbox" value="" id="use-star-' + item.id + '"><label class="form-check-label" for="flexCheckChecked">Sử dụng ngôi sao hi vọng</label></div></div></div>';
+                        }else{
+                            content+= '<div class="col ml-3 use-star"><div class="check-box"><input class="form-check-input" type="checkbox" value="" id="use-star-' + item.id + '"><label class="form-check-label" for="flexCheckChecked">Sử dụng ngôi sao hi vọng</label></div></div></div>';
+                        }
 
+                       if((i+1)<data.schedulers.length){
+                            content+='<hr/>';
+                       }
+                });
+                $("#goalInfo").html(content);
+            }else{
+                // khac - khong lay duoc du lieu
+                alert('Không thể lấy thông tin dự đoán, vui lòng thử lại sau!')
+                return;
+            }
+        }
+
+        function submit_result(id) {
+              let text = "Kết quả dự đoán chỉ được gửi 1 lần duy nhất trong ngày. Bạn muốn tiếp tục?.";
+              if (confirm(text) == true) {
+                  var results = [];
+                 $.each(data.schedulers, function (i, item) {
+                    var result = {"id": item.id, "use_star": $("#use-star-" + item.id).is(':checked') ? 1: 0, "a_team": parseInt($("#a_result_" + item.id).val()), "b_team": parseInt($("#b_result_" + item.id).val())};
+                    results.push(result);
+                 });
+
+                var postData = {"tele_id": dev ? tele_id: `${initDataUnsafe.user.id}`, "emp_id":  $("#cboUsers").val() == null ? "0": $("#cboUsers").val(), "results": results};
+                // TODO Call API
+                var response = register_or_push_data(postData);
+                if (response.code == 0){
+                    $.ajax({
+                      type: 'GET',
+                      async: false,
+                      url: get_data_endpoint + "?tele_id=" + (dev ? tele_id: `${initDataUnsafe.user.id}`),
+                      data: "",
+                      success: function(output) {data = output}
+                    });
+                    load_data(dev ? tele_id: `${initDataUnsafe.user.id}`);
+                }else {
+                    $("#lblNotice").text("Thực hiện không thành công. " + response.message || "");
+                    $("#lblNotice").removeClass("alert-success");
+                    $("#lblNotice").addClass("alert-danger");
+                    $("#lblNotice").show();
+                    $("#lblNotice").focus();
+                }
+              }
+        }
+
+        function webviewClose() {
+            Telegram.WebApp.close();
+        }
+    </script>
+</body>
 </html>
