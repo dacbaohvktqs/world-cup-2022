@@ -84,7 +84,7 @@
                     </div>
                     <hr/> -->
                     <div class="row">
-                        <div class="col-md-6"> <div class="alert alert-warning" role="alert"><b>Tổng số quỹ góp: <span id="spnTotalMoney"></span><b>
+                        <div class="col-md-6"> <div class="alert alert-warning" role="alert"><b>Tổng số điểm: <span id="spnTotalMoney"></span><b>
                     </div></div>
                         <div class="col-md-6"> <div class="alert alert-primary" role="alert">
                       Tổng số người chơi: <span id="spnPlayers"></span>
@@ -92,13 +92,13 @@
                     </div>
                    
                     <!-- Scrollable datatable -->
-                    <table class="table table-striped table-sm" id="data-wc-table">
+                    <table class="table table-striped table-sm" id="data-wc-table" style="height: 40px">
                       <thead class="thead-dark bg-info text-center" id="wc-headers">
                         <tr>
                             <th scope="col" style="min-width: 150px">Họ và tên</th>
                             <th scope="col" class="text-center header" style="min-width: 100px">Xếp hạng</th>
                             <th scope="col" class="text-center header">Tổng điểm</th>
-                            <th scope="col" class="text-center header">Tổng Gạo góp quỹ</th>
+                            <!-- <th scope="col" class="text-center header">Tổng Gạo góp quỹ</th> -->
                             <th scope="col" class="text-center header " style="min-width: 100px" id="scheduler-1"> Trận 1</th>
                             <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-2"> Trận 2</th>
                             <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-3"> Trận 3</th>
@@ -250,7 +250,7 @@
                         content += '<tr><th scope="row">'+ item[1].name +'</th>';
                         content += '<th scope="row" class="text-center">'+ (i == 0 ? '<span class="alert-warning">Ví vàng</span>' : (i + 1)) +'</th>';
                         content += '<td class="text-center"><span class="'+ (item[1].total > 0 ? 'alert-success': (item[1].total ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].total ? (item[1].total > 0 ? '+' + item[1].total : item[1].total) : '-')+'</span></td>';
-                        content += '<td class="text-center"><span class="'+ (item[1].total > 0 ? 'alert-success': (item[1].total ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].total ? (item[1].total > 0 ? '+' + (item[1].total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : (item[1].total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})) : '-')+'</span></td>';
+                        // content += '<td class="text-center"><span class="'+ (item[1].total > 0 ? 'alert-success': (item[1].total ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].total ? (item[1].total > 0 ? '+' + (item[1].total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : (item[1].total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})) : '-')+'</span></td>';
 
                         $.each(schedulers, function (i, scheduler) {
                             content += '<td class="text-center"><span class="'+ (item[1].point_map[scheduler] > 0 ? 'alert-success': (item[1].point_map[scheduler] ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].point_map[scheduler] ? (item[1].point_map[scheduler] > 0 ? '+' + item[1].point_map[scheduler] : item[1].point_map[scheduler]) : '-') +'</span><br/><span>('+ (item[1].guess_map[scheduler] ? item[1].guess_map[scheduler] : '-') +')</span></td>';
@@ -260,7 +260,7 @@
 
                     console.log(total_point);
                     $("#wc-data").html(content);
-                    $("#spnTotalMoney").html((-1 * total_point*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}));
+                    $("#spnTotalMoney").html(total_point);
                     $("#spnPlayers").html(result.length);
                 }
         });
