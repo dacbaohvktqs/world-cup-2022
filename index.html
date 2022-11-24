@@ -30,6 +30,15 @@
     <script src="./wc_stats_files/app.js.download"></script>
     <script src="./wc_stats_files/datatables_basic.js.download"></script>
     <!-- /theme JS files -->
+    <style type="text/css">
+        .header {
+            position: sticky;
+            top:0;
+        }
+         body {
+             height: 800px;
+         }
+    </style>
 </head>
 
 <body class="pace-done" data-new-gr-c-s-check-loaded="14.1087.0" data-gr-ext-installed="">
@@ -74,78 +83,86 @@
                       </label>
                     </div>
                     <hr/> -->
+                    <div class="row">
+                        <div class="col-md-6"> <div class="alert alert-warning" role="alert"><b>Tổng số quỹ góp: <span id="spnTotalMoney"></span><b>
+                    </div></div>
+                        <div class="col-md-6"> <div class="alert alert-primary" role="alert">
+                      Tổng số người chơi: <span id="spnPlayers"></span>
+                    </div></div>
+                    </div>
+                   
                     <!-- Scrollable datatable -->
                     <table class="table table-striped table-sm" id="data-wc-table">
                       <thead class="thead-dark bg-info text-center" id="wc-headers">
                         <tr>
                             <th scope="col" style="min-width: 150px">Họ và tên</th>
-                            <th scope="col" class="text-center" style="min-width: 100px">Xếp hạng</th>
-                            <th scope="col" class="text-center">Tổng điểm</th>
-                            <th scope="col" class="text-center">Tổng Gạo góp quỹ</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-1"> Trận 1</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-2"> Trận 2</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-3"> Trận 3</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-4"> Trận 4</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-5"> Trận 5</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-6"> Trận 6</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-7"> Trận 7</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-8"> Trận 8</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-9"> Trận 9</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-10"> Trận 10</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-11"> Trận 11</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-12"> Trận 12</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-13"> Trận 13</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-14"> Trận 14</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-15"> Trận 15</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-16"> Trận 16</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-17"> Trận 17</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-18"> Trận 18</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-19"> Trận 19</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-20"> Trận 20</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-21"> Trận 21</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-22"> Trận 22</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-23"> Trận 23</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-24"> Trận 24</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-25"> Trận 25</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-26"> Trận 26</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-27"> Trận 27</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-28"> Trận 28</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-29"> Trận 29</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-30"> Trận 30</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-31"> Trận 31</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-32"> Trận 32</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-33"> Trận 33</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-34"> Trận 34</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-35"> Trận 35</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-36"> Trận 36</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-37"> Trận 37</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-38"> Trận 38</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-39"> Trận 39</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-40"> Trận 40</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-41"> Trận 41</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-42"> Trận 42</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-43"> Trận 43</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-44"> Trận 44</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-45"> Trận 45</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-46"> Trận 46</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-47"> Trận 47</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-48"> Trận 48</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-49"> Trận 49</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-50"> Trận 50</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-51"> Trận 51</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-52"> Trận 52</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-53"> Trận 53</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-54"> Trận 54</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-55"> Trận 55</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-56"> Trận 56</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-57"> Trận 57</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-58"> Trận 58</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-59"> Trận 59</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-60"> Trận 60</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-61"> Trận 61</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-62"> Trận 62</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-63"> Trận 63</th>
-                            <th scope="col" class="text-center" style="min-width: 100px" id="scheduler-64"> Trận 64</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px">Xếp hạng</th>
+                            <th scope="col" class="text-center header">Tổng điểm</th>
+                            <th scope="col" class="text-center header">Tổng Gạo góp quỹ</th>
+                            <th scope="col" class="text-center header " style="min-width: 100px" id="scheduler-1"> Trận 1</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-2"> Trận 2</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-3"> Trận 3</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-4"> Trận 4</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-5"> Trận 5</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-6"> Trận 6</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-7"> Trận 7</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-8"> Trận 8</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-9"> Trận 9</th>
+                            <th scope="col" class="text-center header header" style="min-width: 100px" id="scheduler-10"> Trận 10</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-11"> Trận 11</th>
+                            <th scope="col" class="text-center header header" style="min-width: 100px" id="scheduler-12"> Trận 12</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-13"> Trận 13</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-14"> Trận 14</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-15"> Trận 15</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-16"> Trận 16</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-17"> Trận 17</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-18"> Trận 18</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-19"> Trận 19</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-20"> Trận 20</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-21"> Trận 21</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-22"> Trận 22</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-23"> Trận 23</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-24"> Trận 24</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-25"> Trận 25</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-26"> Trận 26</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-27"> Trận 27</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-28"> Trận 28</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-29"> Trận 29</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-30"> Trận 30</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-31"> Trận 31</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-32"> Trận 32</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-33"> Trận 33</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-34"> Trận 34</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-35"> Trận 35</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-36"> Trận 36</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-37"> Trận 37</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-38"> Trận 38</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-39"> Trận 39</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-40"> Trận 40</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-41"> Trận 41</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-42"> Trận 42</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-43"> Trận 43</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-44"> Trận 44</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-45"> Trận 45</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-46"> Trận 46</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-47"> Trận 47</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-48"> Trận 48</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-49"> Trận 49</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-50"> Trận 50</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-51"> Trận 51</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-52"> Trận 52</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-53"> Trận 53</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-54"> Trận 54</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-55"> Trận 55</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-56"> Trận 56</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-57"> Trận 57</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-58"> Trận 58</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-59"> Trận 59</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-60"> Trận 60</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-61"> Trận 61</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-62"> Trận 62</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-63"> Trận 63</th>
+                            <th scope="col" class="text-center header" style="min-width: 100px" id="scheduler-64"> Trận 64</th>
                         </tr>
                       </thead>
                       <tbody id="wc-data">
@@ -182,7 +199,11 @@
                     $.each(response_data, function (i, item) {
                         schedulers.push(item.scheduler_id);
                         scheduler_names.push(item.a_team + ' - '+ item.b_team);
-                        $('#scheduler-' + (i+1)).html((item.a_team + ' - '+ item.b_team) + '<br/>(' + item.a_final_result + "-" + item.b_final_result + ')');
+                        $('#scheduler-' + (i+1)).html((item.a_team + ' - '+ item.b_team) + '<br/>(' + item.a_final_result + "-" + item.b_final_result + ')')
+                        if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
+                            return;
+                        }
+
                         $.each(item.guess_data, function (i, item1) {
                             point_array = data_map[item1.tele_id];
                             if (!point_array){
@@ -223,10 +244,9 @@
                       if(a[1].total < b[1].total) { return -1; }
                       return 0;
                     });
-                    console.log(result);
-
+                    var total_point = 0;
                     $.each(result, function (i, item) {
-                        console.log(item[1]);
+                        total_point+= (item[1].total);
                         content += '<tr><th scope="row">'+ item[1].name +'</th>';
                         content += '<th scope="row" class="text-center">'+ (i == 0 ? '<span class="alert-warning">Ví vàng</span>' : (i + 1)) +'</th>';
                         content += '<td class="text-center"><span class="'+ (item[1].total > 0 ? 'alert-success': (item[1].total ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].total ? (item[1].total > 0 ? '+' + item[1].total : item[1].total) : '-')+'</span></td>';
@@ -238,7 +258,10 @@
                          content +='</tr>';
                     });
 
+                    console.log(total_point);
                     $("#wc-data").html(content);
+                    $("#spnTotalMoney").html((-1 * total_point*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}));
+                    $("#spnPlayers").html(result.length);
                 }
         });
         </script>
