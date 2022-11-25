@@ -2,36 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SI Sôi động cùng World Cup 2022</title>
-    <!-- Global stylesheets -->
-    <link href="./wc_stats_files/css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/styles.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/core.min.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/components.min.css" rel="stylesheet" type="text/css">
-    <link href="./wc_stats_files/colors.min.css" rel="stylesheet" type="text/css">
-    <!-- /global stylesheets -->
-    <!-- Core JS files -->
-    <script type="text/javascript" async="" src="./wc_stats_files/ga.js.download"></script>
-    <script src="./wc_stats_files/pace.min.js.download"></script>
-    <script src="./wc_stats_files/jquery.min.js.download"></script>
-    <script src="./wc_stats_files/bootstrap.min.js.download"></script>
-    <script src="./wc_stats_files/blockui.min.js.download"></script>
-    <script src="./wc_stats_files/nicescroll.min.js.download"></script>
-    <script src="./wc_stats_files/drilldown.js.download"></script>
-    <!-- /core JS files -->
-    <!-- Theme JS files -->
-    <script src="./wc_stats_files/datatables.min.js.download"></script>
-    <script src="./wc_stats_files/select2.min.js.download"></script>
-    <script type="text/javascript" src="./wc_stats_files/loading-screen.js.download"></script>
-    <script src="./wc_stats_files/app.js.download"></script>
-    <script src="./wc_stats_files/datatables_basic.js.download"></script>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
     <!-- /theme JS files -->
     <style type="text/css">
-        table#data-wc-table {
+            table#data-wc-table {
             margin:0;
             border:none;
             background-color:#FFF;
@@ -41,17 +30,22 @@
         }
         table#data-wc-table th {
             background:#00bcd4;
-            /*border-right:1px solid #999;*/
             color:#FFF;
-            padding:3px;
+            padding:4px;
             position:sticky;
             top:0;
-          /* ensure header row sits atop everything else when scrolling down */
+            font-weight: bold;
+            font-size: 0.82em;
+            vertical-align: middle;
             z-index:1;
+            font-family: Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
         }
         table#data-wc-table td {
             background:#fff;
-            padding:4px 5px;
+            padding:5px 5px;
+            font-size: 0.7em;
+            font-weight: bold;
+            font-family: Roboto,Helvetica Neue,Helvetica,Arial !important;
         }
         /* ensure first header cell sits atop everything else when scrolling right */
         table#data-wc-table th:first-child {
@@ -64,120 +58,95 @@
             position:sticky;
             left:0;
             border-right-color:#aaa;
+            font-weight: bold;
         }
     </style>
 </head>
 
-<body class="pace-done" data-new-gr-c-s-check-loaded="14.1087.0" data-gr-ext-installed="">
-    <div class="pace  pace-inactive">
-        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-            <div class="pace-progress-inner"></div>
+<body>
+    <div class="page-container">
+        <br/>
+        <div class="col-md-12" style="font-family: Roboto,Helvetica Neue,Helvetica,Arial !important; font-weight: bold;">
+            <h4>SI SÔI ĐỘNG CÙNG WORLD CUP 2022 - BẢNG XẾP HẠNG CÁC TAY ĐUA WORLD CUP 2022</h4>
         </div>
-        <div class="pace-activity"></div>
+        <div class="col-md-12">
+            <table class="table table-striped" id="data-wc-table">
+              <thead class="bg-info text-center" id="wc-headers">
+                <tr>
+                    <th style="min-width: 150px">Họ và tên</th>
+                    <th class="text-center header" style="min-width: 100px">Xếp hạng</th>
+                    <th class="text-center header">Tổng điểm</th>
+                    <th class="text-center header " style="min-width: 100px" id="scheduler-1"> Trận 1</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-2"> Trận 2</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-3"> Trận 3</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-4"> Trận 4</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-5"> Trận 5</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-6"> Trận 6</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-7"> Trận 7</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-8"> Trận 8</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-9"> Trận 9</th>
+                    <th class="text-center header header" style="min-width: 100px" id="scheduler-10"> Trận 10</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-11"> Trận 11</th>
+                    <th class="text-center header header" style="min-width: 100px" id="scheduler-12"> Trận 12</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-13"> Trận 13</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-14"> Trận 14</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-15"> Trận 15</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-16"> Trận 16</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-17"> Trận 17</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-18"> Trận 18</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-19"> Trận 19</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-20"> Trận 20</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-21"> Trận 21</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-22"> Trận 22</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-23"> Trận 23</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-24"> Trận 24</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-25"> Trận 25</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-26"> Trận 26</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-27"> Trận 27</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-28"> Trận 28</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-29"> Trận 29</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-30"> Trận 30</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-31"> Trận 31</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-32"> Trận 32</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-33"> Trận 33</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-34"> Trận 34</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-35"> Trận 35</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-36"> Trận 36</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-37"> Trận 37</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-38"> Trận 38</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-39"> Trận 39</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-40"> Trận 40</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-41"> Trận 41</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-42"> Trận 42</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-43"> Trận 43</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-44"> Trận 44</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-45"> Trận 45</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-46"> Trận 46</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-47"> Trận 47</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-48"> Trận 48</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-49"> Trận 49</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-50"> Trận 50</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-51"> Trận 51</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-52"> Trận 52</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-53"> Trận 53</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-54"> Trận 54</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-55"> Trận 55</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-56"> Trận 56</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-57"> Trận 57</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-58"> Trận 58</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-59"> Trận 59</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-60"> Trận 60</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-61"> Trận 61</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-62"> Trận 62</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-63"> Trận 63</th>
+                    <th class="text-center header" style="min-width: 100px" id="scheduler-64"> Trận 64</th>
+                </tr>
+              </thead>
+              <tbody id="wc-data">
+              </tbody>
+            </table>
+        </div>
     </div>
-    <div class="loading-screen" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.8); background-image: url(&quot;../../Content/loading-plugin/img/loading.gif&quot;); background-repeat: no-repeat; background-position: center 100px; z-index: 1000000; display: none;"></div>
-    <!-- Main navbar -->
-    <!-- /main navbar -->
-    <!-- Second navbar -->
-    <div class="navbar navbar-defaul" id="navbar-second">
-        <div class="page-header">
-            <div class="page-header-content">
-                <div class="page-title">
-                    <h4>SI SÔI ĐỘNG CÙNG WORLD CUP 2022 - BẢNG XẾP HẠNG CÁC TAY ĐUA WORLD CUP 2022</h4>
-                </div>
-            </div>
-        </div>
-        <!-- /page header -->
-        <!-- Page container -->
-        <div class="page-container">
-            <!-- Page content -->
-            <div class="page-content">
-                <div role="alert"><b>Tổng số điểm: <span class="alert-warning" id="spnTotalMoney"></span><b></div>
-                    <br/>
-                <!-- Main content -->
-                <div class="table-responsive-sm">
-                    <!-- Scrollable datatable -->
-                    <table class="table table-striped" id="data-wc-table">
-                      <thead class="thead-dark bg-info text-center" id="wc-headers" style="overflow: visible !important;">
-                        <tr>
-                            <th style="min-width: 150px">Họ và tên</th>
-                            <th class="text-center header" style="min-width: 100px">Xếp hạng</th>
-                            <th class="text-center header">Tổng điểm</th>
-                            <th class="text-center header " style="min-width: 100px" id="scheduler-1"> Trận 1</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-2"> Trận 2</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-3"> Trận 3</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-4"> Trận 4</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-5"> Trận 5</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-6"> Trận 6</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-7"> Trận 7</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-8"> Trận 8</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-9"> Trận 9</th>
-                            <th class="text-center header header" style="min-width: 100px" id="scheduler-10"> Trận 10</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-11"> Trận 11</th>
-                            <th class="text-center header header" style="min-width: 100px" id="scheduler-12"> Trận 12</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-13"> Trận 13</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-14"> Trận 14</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-15"> Trận 15</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-16"> Trận 16</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-17"> Trận 17</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-18"> Trận 18</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-19"> Trận 19</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-20"> Trận 20</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-21"> Trận 21</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-22"> Trận 22</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-23"> Trận 23</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-24"> Trận 24</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-25"> Trận 25</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-26"> Trận 26</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-27"> Trận 27</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-28"> Trận 28</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-29"> Trận 29</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-30"> Trận 30</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-31"> Trận 31</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-32"> Trận 32</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-33"> Trận 33</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-34"> Trận 34</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-35"> Trận 35</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-36"> Trận 36</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-37"> Trận 37</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-38"> Trận 38</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-39"> Trận 39</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-40"> Trận 40</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-41"> Trận 41</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-42"> Trận 42</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-43"> Trận 43</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-44"> Trận 44</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-45"> Trận 45</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-46"> Trận 46</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-47"> Trận 47</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-48"> Trận 48</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-49"> Trận 49</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-50"> Trận 50</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-51"> Trận 51</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-52"> Trận 52</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-53"> Trận 53</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-54"> Trận 54</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-55"> Trận 55</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-56"> Trận 56</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-57"> Trận 57</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-58"> Trận 58</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-59"> Trận 59</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-60"> Trận 60</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-61"> Trận 61</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-62"> Trận 62</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-63"> Trận 63</th>
-                            <th class="text-center header" style="min-width: 100px" id="scheduler-64"> Trận 64</th>
-                        </tr>
-                      </thead>
-                      <tbody id="wc-data">
-                      </tbody>
-                    </table>
-                    <!-- /scrollable datatable -->
-                </div>
-                <!-- /main content -->
-            </div>
-            <!-- /page content -->
-        </div>
         <!-- /page container -->
         <script type="text/javascript">
             var get_data_endpoint = "https://gw-bioid.vnpt.vn/wc/1.0/WorldCup/GetData_Guess";
@@ -204,9 +173,9 @@
                         schedulers.push(item.scheduler_id);
                         scheduler_names.push(item.a_team + ' - '+ item.b_team);
                         $('#scheduler-' + (i+1)).html((item.a_team + ' - '+ item.b_team) + '<br/>(' + item.a_final_result + "-" + item.b_final_result + ')')
-                        if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
-                            return;
-                        }
+                        // if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
+                        //     return;
+                        // }
 
                         $.each(item.guess_data, function (i, item1) {
                             point_array = data_map[item1.tele_id];
@@ -280,8 +249,6 @@
         <!-- Footer -->
         <div class="footer text-muted"> © 2022. VNPTIT - SI </div>
         <!-- /footer -->
-    </div>
 </body>
-<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
 </html>
