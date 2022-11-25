@@ -32,7 +32,6 @@
     <!-- /theme JS files -->
     <style type="text/css">
         table#data-wc-table {
-            width:1600px; /* just to demonstrate horizontal scrolling & stickiness */
             margin:0;
             border:none;
             background-color:#FFF;
@@ -78,16 +77,13 @@
     </div>
     <div class="loading-screen" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.8); background-image: url(&quot;../../Content/loading-plugin/img/loading.gif&quot;); background-repeat: no-repeat; background-position: center 100px; z-index: 1000000; display: none;"></div>
     <!-- Main navbar -->
-    <div class="navbar navbar-inverse">
-        <div class="navbar-header"> <a class="navbar-brand" href="#">SI SÔI ĐỘNG CÙNG WORLD CUP 2022</a> </div>
-    </div>
     <!-- /main navbar -->
     <!-- Second navbar -->
-    <div class="navbar navbar-default" id="navbar-second">
+    <div class="navbar navbar-defaul" id="navbar-second">
         <div class="page-header">
             <div class="page-header-content">
                 <div class="page-title">
-                    <h4>BẢNG XẾP HẠNG CÁC TAY ĐUA WORLD CUP 2022</h4>
+                    <h4>SI SÔI ĐỘNG CÙNG WORLD CUP 2022 - BẢNG XẾP HẠNG CÁC TAY ĐUA WORLD CUP 2022</h4>
                 </div>
             </div>
         </div>
@@ -96,20 +92,15 @@
         <div class="page-container">
             <!-- Page content -->
             <div class="page-content">
-                <div class="row">
-                        <div class="col-md-6"> <div class="alert alert-warning" role="alert"><b>Tổng số điểm: <span id="spnTotalMoney"></span><b>
-                    </div></div>
-                        <div class="col-md-6"> <div class="alert alert-primary" role="alert">
-                      Tổng số người chơi: <span id="spnPlayers"></span>
-                    </div></div>
-                </div>
+                <div role="alert"><b>Tổng số điểm: <span class="alert-warning" id="spnTotalMoney"></span><b></div>
+                    <br/>
                 <!-- Main content -->
-                <div class=" responsive-table">
+                <div class="table-responsive-sm">
                     <!-- Scrollable datatable -->
                     <table class="table table-striped" id="data-wc-table">
-                      <thead class="thead-dark bg-info text-center" id="wc-headers">
+                      <thead class="thead-dark bg-info text-center" id="wc-headers" style="overflow: visible !important;">
                         <tr>
-                            <th style="min-width: 150px" class="sticky-table-column__sticky">Họ và tên</th>
+                            <th style="min-width: 150px">Họ và tên</th>
                             <th class="text-center header" style="min-width: 100px">Xếp hạng</th>
                             <th class="text-center header">Tổng điểm</th>
                             <th class="text-center header " style="min-width: 100px" id="scheduler-1"> Trận 1</th>
@@ -178,7 +169,7 @@
                             <th class="text-center header" style="min-width: 100px" id="scheduler-64"> Trận 64</th>
                         </tr>
                       </thead>
-                      <tbody id="wc-data" class="table-responsive">
+                      <tbody id="wc-data">
                       </tbody>
                     </table>
                     <!-- /scrollable datatable -->
