@@ -177,9 +177,9 @@
                         schedulers.push(item.scheduler_id);
                         scheduler_names.push(item.a_team + ' - '+ item.b_team);
                         $('#scheduler-' + (i+1)).html((item.a_team + ' - '+ item.b_team) + '<br/>(' + item.a_final_result + "-" + item.b_final_result + ')')
-                        // if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
-                        //     return;
-                        // }
+                        if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
+                             return;
+                         }
 
                         $.each(item.guess_data, function (i, item1) {
                             point_array = data_map[item1.tele_id];
