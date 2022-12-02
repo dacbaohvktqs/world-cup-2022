@@ -241,6 +241,7 @@
                     $("#wc-data").html(content);
                     $("#spnTotalMoney").html(total_point);
                     $("#spnPlayers").html(result.length);
+                    document.getElementById("scheduler-" + ((schedulers.length + 12) < 64 ? schedulers.length + 12 : 64)).scrollIntoView();
                 }
         });
 
