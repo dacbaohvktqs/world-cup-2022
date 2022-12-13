@@ -69,9 +69,12 @@
         <div class="col-md-12" style="font-family: Roboto,Helvetica Neue,Helvetica,Arial !important; font-weight: bold;">
             <h4>SI SÔI ĐỘNG CÙNG WORLD CUP 2022 - BẢNG XẾP HẠNG CÁC TAY ĐUA WORLD CUP 2022</h4>
         </div>
-        <div class="col-md-12" style="font-family: Roboto,Helvetica Neue,Helvetica,Arial !important;"">
-            <div role="alert"><b>Tổng số điểm: <span class="alert-warning" id="spnTotalMoney"></span><b></div>
+        <div class="col-md-12" style="font-family: Roboto,Helvetica Neue,Helvetica,Arial !important;">
+            <div role="alert"><b>Tổng số điểm: <span class="alert-warning" id="spnTotalMoney"></span></b></div>
                     <br/>
+            <div class="col-md-12" style="font-family: Roboto,Helvetica Neue,Helvetica,Arial !important;"><div role="alert"><b>Tổng số trận: <span class="alert-warning" id="spnTotalScore"></span></b>
+            </div>
+            </br>
         </div>
         <div class="col-md-12">
             <table class="table table-striped" id="data-wc-table">
@@ -170,6 +173,7 @@
                     var point_array = [];
                     var point_map = {};
                     var guess_map = {};
+                    var star_map = {};
                     var schedulers = [];
                     var scheduler_names = [];
 
@@ -177,14 +181,14 @@
                         schedulers.push(item.scheduler_id);
                         scheduler_names.push(item.a_team + ' - '+ item.b_team);
                         $('#scheduler-' + (i+1)).html((item.a_team + ' - '+ item.b_team) + '<br/>(' + item.a_final_result + "-" + item.b_final_result + ')')
-                        if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
-                             return;
-                         }
+                        //if ((new Date().getTime() - new Date(item.date).getTime()) < 0){
+                            //return;
+                        //}
 
                         $.each(item.guess_data, function (i, item1) {
                             point_array = data_map[item1.tele_id];
                             if (!point_array){
-                                data_map[item1.tele_id] = {"name": item1.name, "points": [], "total": 0, "guess": [], "point_map": {}, "guess_map": {}};
+                                data_map[item1.tele_id] = {"name": item1.name, "points": [], "total": 0, "guess": [], "point_map": {}, "guess_map": {}, "star_map": {}};
                             }
 
                             var total = data_map[item1.tele_id].total || 0;
@@ -192,10 +196,11 @@
 
                             point_map = data_map[item1.tele_id].point_map;
                             guess_map = data_map[item1.tele_id].guess_map;
+                            star_map = data_map[item1.tele_id].star_map;
 
                             point_map[item.scheduler_id] = item1.final_point;
-                            guess_map[item.scheduler_id] = (item1.description == "-1" ) ? "-" : (item1.a_guess_result + "-" + item1.b_guess_result);
-
+                            guess_map[item.scheduler_id] = (item1.description == "-1" ) ? "-" : (((new Date().getTime() - new Date(item.date).getTime()) < 0) ? ("?-?") :(item1.a_guess_result + "-" + item1.b_guess_result)) ;
+                            star_map[item.scheduler_id] = (item1.use_star);
                             point_array.push(item1.final_point);
                             total+= item1.final_point;
 
@@ -206,7 +211,7 @@
 
                             guess.push(item1.a_guess_result + "-" + item1.b_guess_result);
 
-                            var person_data = {"name": item1.name, "points": point_array, "total": total, "guess": guess, "point_map": point_map, "guess_map": guess_map};
+                            var person_data = {"name": item1.name, "points": point_array, "total": total, "guess": guess, "point_map": point_map, "guess_map": guess_map, "star_map": star_map};
                             data_map[item1.tele_id] = person_data;
                         });
                         
@@ -221,25 +226,23 @@
                       return (a[1].total < b[1].total) ? -1 : 1;
                     });
 
-                    console.log(result);
-
                     var total_point = 0;
                     $.each(result, function (i, item) {
                         total_point+= (item[1].total);
                         content += '<tr><td>'+ item[1].name +'</td>';
                         content += '<td class="text-center">'+ (i == 0 ? '<span class="alert-warning">Ví vàng</span>' : (i + 1)) +'</td>';
                         content += '<td class="text-center"><span class="'+ (item[1].total > 0 ? 'alert-success': (item[1].total ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].total ? (item[1].total > 0 ? '+' + item[1].total : item[1].total) : '-')+'</span></td>';
-                        // content += '<td class="text-center"><span class="'+ (item[1].total > 0 ? 'alert-success': (item[1].total ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].total ? (item[1].total > 0 ? '+' + (item[1].total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : (item[1].total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})) : '-')+'</span></td>';
 
                         $.each(schedulers, function (i, scheduler) {
-                            content += '<td class="text-center"><span class="'+ (item[1].point_map[scheduler] > 0 ? 'alert-success': (item[1].point_map[scheduler] ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].point_map[scheduler] ? (item[1].point_map[scheduler] > 0 ? '+' + item[1].point_map[scheduler] : item[1].point_map[scheduler]) : '-') +'</span><br/><span>('+ (item[1].guess_map[scheduler] ? item[1].guess_map[scheduler] : '-') +')</span></td>';
+                        	console.log(item[1]);
+                            content += '<td class="text-center"><span class="'+ (item[1].point_map[scheduler] > 0 ? 'alert-success': (item[1].point_map[scheduler] ? 'alert-danger' : 'alert-warning') ) +'">'+(item[1].point_map[scheduler] ? (item[1].point_map[scheduler] > 0 ? '+' + item[1].point_map[scheduler] : item[1].point_map[scheduler]) : '-') +'</span><br/><img src="'+ (item[1].star_map[scheduler] ? "https://cdn-icons-png.flaticon.com/16/616/616490.png": "") +'" /><span>('+ (item[1].guess_map[scheduler] ? item[1].guess_map[scheduler] : '-') +')</span></td>';
                         });
                          content +='</tr>';
                     });
 
-                    console.log(total_point);
                     $("#wc-data").html(content);
                     $("#spnTotalMoney").html(total_point);
+                    $("#spnTotalScore").html(schedulers.length);
                     document.getElementById("scheduler-" + ((schedulers.length + 12) < 64 ? schedulers.length + 12 : 64)).scrollIntoView();
                 }
         });
